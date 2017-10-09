@@ -1,0 +1,6 @@
+{
+    "steamReturnUrl": "http://localhost:3037/auth/steam/return",
+    "steamRealm": "http://localhost:3037/",
+    "steamApiKey": "STEAMAPIKEYGOESHERE",
+    "indexSessionSecret": "THISSHOULDBECHANGEDTOARANDOMSTRING"
+}

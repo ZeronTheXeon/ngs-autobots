@@ -1,0 +1,92 @@
+extends layout
+
+block stylesheets
+    link(rel='stylesheet' href='/stylesheets/style.css' type="text/css")
+
+block content
+    header
+        .fixed-announcement.blue
+            .announcement
+                .container This is a CLOSED BETA for NGS's free bots system. Consider donating to a charity or using the link!
+        nav.top-nav.green
+            .container
+                .nav-wrapper
+                    a.button-collapse.top-nav.full.hide-on-large-only(href='#', data-activates='nav-mobile')
+                        i.material-icons menu
+                    .h3 SideNav
+        ul#nav-mobile.side-nav.fixed
+            if user
+                li.user-details.blue
+                    .row
+                        .col.s4.m4.l4
+
+                        a(href="#")
+
+                            img.responsive-img.circle(src=user.avatar)
+                li.bold
+                    a.waves-effect.waves-teal(href="#") Welcome, #{user.personaname}!
+                li.bold
+                    a.waves-effect.waves-teal(href='#about') About
+                li.bold
+                    a.waves-effect.waves-teal(href='#getting-started') Getting Started
+                li.bold
+                    a.waves-effect.waves-teal(target="_blank" href='https://www.neogenesisnetwork.net/forums/forumdisplay.php?fid=6') Suggest
+                li.bold
+                    a.waves-effect.waves-teal(target="_blank" href='https://www.neogenesisnetwork.net/forums/showthread.php?tid=4/') Help Out
+                li.bold
+                    a.waves-effect.waves-teal(target="_blank" href='https://www.neogenesisnetwork.net/donate') Donate
+                li.bold
+                    a.waves-effect.waves-teal(href='/logout')
+                        i.material-icons exit_to_app
+                        | Logout
+            else
+                .logo.center
+                    a#logo-container.brand-logo(href='/')
+                        img#front-page-logo(src='https://neogenesisnetwork.net/forums/images/Carbon/logo.png' alt="Neogenesis Network Logo")
+                li.bold
+                    a.waves-effect.waves-teal(href='/auth/steam') Login
+                li.bold
+                    a.waves-effect.waves-teal(href='#about') About
+                li.bold
+                    a.waves-effect.waves-teal(href='#getting-started') Getting Started
+                li.bold
+                    a.waves-effect.waves-teal(target="_blank" href='https://www.neogenesisnetwork.net/forums/forumdisplay.php?fid=6') Suggest
+                li.bold
+                    a.waves-effect.waves-teal(target="_blank" href='https://www.neogenesisnetwork.net/forums/showthread.php?tid=4/') Help Out
+                li.bold
+                    a.waves-effect.waves-teal(target="_blank" href='https://www.neogenesisnetwork.net/donate') Donate
+                
+    main
+        .container
+            if user
+                .card.small
+                    .card-image
+                        img(src='http://materializecss.com/images/sample-1.jpg')
+                        span.card-title Card Title
+                    .card-content
+                        p
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, voluptatum soluta aspernatur quod quaerat saepe accusamus ducimus dolore commodi, rem.
+                    .card-action
+                        a(href='#') This is a link
+
+                table
+                    tr
+                        th Property
+                        th Value
+                    tr
+                        td Username
+                        td #{user.personaname}
+                    tr
+                        td SteamID
+                        td #{user.steamid}
+                    tr
+                        td Real Name
+                        td #{user.realname}
+                    tr
+                        td #{user.loccountrycode}
+            else
+                h1 Please login!
+                a.flow-text(href="/auth/steam") Log In!
+block afterjquery
+    script.
+        $(".button-collapse").sideNav();

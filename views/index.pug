@@ -1,0 +1,61 @@
+extends layout
+
+block header
+    header
+        .navbar-fixed
+            nav.top-nav.green.z-depth-2
+                .container.nav-wrapper
+                    a.button-collapse.hide-on-large-only(href='#', data-activates='nav-mobile')
+                        i.material-icons menu
+                    a#logo-container.brand-logo(href='/')
+                        img#front-page-logo.responsive-img(src='/images/logo.png' alt="Neogenesis Network Logo")
+                    ul.right.hide-on-med-and-down
+                        li: a(href='/auth/steam') Login
+        //- ul#nav-mobile.side-nav.fixed
+        //-     .logo.center
+                
+        //-     li.bold
+        //-         a.waves-effect.waves-teal(href='/auth/steam') Login
+        //-     li.bold
+        //-         a.waves-effect.waves-teal(href='#about') About
+        //-     li.bold
+        //-         a.waves-effect.waves-teal(href='#getting-started') Getting Started
+        //-     li.bold
+        //-         a.waves-effect.waves-teal(target="_blank" href='https://www.neogenesisnetwork.net/forums/forumdisplay.php?fid=6') Suggest
+        //-     li.bold
+        //-         a.waves-effect.waves-teal(target="_blank" href='https://www.neogenesisnetwork.net/forums/showthread.php?tid=4/') Help Out
+        //-     li.bold
+        //-         a.waves-effect.waves-teal(target="_blank" href='https://www.neogenesisnetwork.net/donate') Donate
+
+
+block content
+    main
+        .container
+            h1= title
+            p.flow-text.
+                Easy, fast, responsive, beautiful. We offer free TF2 trading bots, complete with auto-banking features that maximize earnings and minimize losses. Experience the freedom of the 21st century while doing something else.
+            h3#about What are we?
+            p.flow-text.
+                We are NGS. We are a rag-tag bunch of hooligans who have attempted to do something that isn't commonly heard of. How many times have you heard that a potentially valuable piece of software is not only free, but open for anyone to change, utilize, and extend as they see fit?
+            h3 Pricing
+            p.flow-text
+                | FREE, FREE, FREE! This does mean that demand will be very high. While I can't promise we will be free forever, I also don't see why we should keep our code propriatary. 
+                a(href="https://unlicense.org/") Unlicense License baby!
+            h3#getting-started Getting Started
+            p.flow-text.
+                To be populated!
+
+block footer
+    footer.green.page-footer
+        .container
+            .row
+                .col.l4.s12
+                    h5 Help us out!
+                    p I hope you enjoy using this service. While I try my hardest to make everything work properly, I can't ensure that everything will always be tip-top. Apply for Dev and help us make a better future.
+        .footer-copyright
+            .container.
+                © 2017 Neogenesis Network
+
+block afterjquery
+    script.
+        $(".button-collapse").sideNav();
