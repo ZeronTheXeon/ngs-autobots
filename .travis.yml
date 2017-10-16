@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+    - "node"
+
+# And compile!
+install:
+    - cd config/
+    - \cp website-example.json website.json 
+    - cd ../
+   
+env:
+    - NODE_ENV=TEST
