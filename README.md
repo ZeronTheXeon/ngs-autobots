@@ -1,2 +1,2 @@
 # NGS Autobots [![Build Status](https://travis-ci.org/ZeronTheXeon/ngs-autobots.svg?branch=master)](https://travis-ci.org/ZeronTheXeon/ngs-autobots)
-A website built for steam trading, all open for peeps to configure as they see fit.
+Please utilize the repository at https://github.com/NGSNetwork/autobots
